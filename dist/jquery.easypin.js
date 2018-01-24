@@ -432,11 +432,6 @@
                     // drag event
                     $.fn.easypin.defaults.drag(absX, absY, markerContainer);
 
-                    if(e.buttons==1)
-                    {
-                        $.fn.easypin.defaults.drop(absX, absY, markerContainer);
-                    }
-
                     $(markerContainer).css({
                         position: 'absolute',
                         top: setPx(relY),
@@ -455,6 +450,8 @@
                 var markerInstance = e.currentTarget;
                 var lat = $(markerInstance).attr($.fn.easypin.config('xAttribute'));
                 var long = $(markerInstance).attr($.fn.easypin.config('yAttribute'));
+
+                $.fn.easypin.defaults.drop(lat, long, markerContainer);
 
                 dataUpdate(parentId, markerIndex, {coords: {lat: lat, long: long}});
 
