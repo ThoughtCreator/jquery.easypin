@@ -2,17 +2,8 @@
   "name": "jquery.easypin",
   "version": "1.0.8",
   "description": "Simply pinning objects on pictures",
-  "author": {
-    "name": "Ahmet ATAY",
-    "email": "ahmet.atay@hotmail.com",
-    "url": "http://www.atayahmet.com"
-  },
   "main": "dist/jquery.easypin.js",
   "homepage": "http://atayahmet.github.io/jquery.easypin",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/atayahmet/jquery.easypin"
-  },
   "bugs": {
     "url": "https://github.com/atayahmet/jquery.easypin/issues"
   },
