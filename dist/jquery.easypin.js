@@ -158,7 +158,7 @@
         			var parentElement = e.currentTarget;
 
                     // get total marker
-                    var totalMarker = $('.easy-marker', parentElement).size();
+                    var totalMarker = $('.easy-marker', parentElement).length;
 
                     // general limit
                     var limit = parseInt($.fn.easypin.defaults.limit);
@@ -237,15 +237,8 @@
         			var absX = markerBorderX.toFixed(3)-markerWidthHalf;
         			var absY = markerBorderY.toFixed(3)-markerHeightHalf;
 
-                    // create tool
-                    var tools = createTools({
-                        markerWidth: markerWidth,
-                        markerHeight: markerHeight
-                    });
-
                     // create marker container
                     var markerContainer = createMarker({
-                        tools: tools,
                         parentElement: parentElement,
                         markerClass: markerClass,
                         markerBorderX: markerBorderX,
@@ -435,9 +428,6 @@
 
                     var absX = relX.toFixed(3)-markerWidthHalf;
                     var absY = parseInt(relY.toFixed(3))+markerHeightHalf;
-
-                    // on move marker then check tool container position
-                    checkToolsPosition(absY, depends.imageHeight, markerContainer)
 
                     // drag event
                     $.fn.easypin.defaults.drag(absX, absY, markerContainer);
@@ -1039,7 +1029,7 @@
 		if(type == 'popup') {
 
 			var className = setClass($.fn.easypin.defaults.popupOpacityLayer);
-			return $(className, parentElement).size() > 0;
+			return $(className, parentElement).length > 0;
 
 		}
 
@@ -1239,7 +1229,7 @@
                 var parentId = $('.easypin-target', parentElement).attr('easypin-id');
 
                 // check the form exists
-                var formExists = $('form', modalContext).size() > 0;
+                var formExists = $('form', modalContext).length > 0;
 
                 if(formExists) {
                     var modalBody = $('form', modalContext); // form instance
@@ -1361,7 +1351,7 @@
 
         items[parentId][markerIndex] = data;
 
-        if($('input[name="easypin-store"]').size() < 1) {
+        if($('input[name="easypin-store"]').length < 1) {
             $(setClass($.fn.easypin.defaults.parentClass)+':first').before('<input type="hidden" name="easypin-store" value="'+encodeURIComponent(toJsonString(items))+'" />');
         }else{
             $('input[name="easypin-store"]').val(encodeURIComponent(toJsonString(items)));
@@ -1441,7 +1431,7 @@
 
                 items = removeHelper(parentId, markerIndex, items)
 
-                var totalPin = $('input[name="easypin-store"]').size();
+                var totalPin = $('input[name="easypin-store"]').length;
                 if(totalPin < 1) {
                     $(setClass($.fn.easypin.defaults.parentClass)+':first').before('<input type="hidden" name="easypin-store" value="'+encodeURIComponent(toJsonString(items))+'" />');
                 }else{
@@ -1814,7 +1804,7 @@
         $(tooltipContainer).append(span).append(arrow);
 
         // remove previous popover
-        if($('div.popover', markerContainer).size() > 0) {
+        if($('div.popover', markerContainer).length > 0) {
             // animate modal body
     		$('div.popover', markerContainer).animate(
     				{
@@ -1927,15 +1917,8 @@
                 var absX = markerBorderX.toFixed(3)-markerWidthHalf;
                 var absY = markerBorderY.toFixed(3)-markerHeightHalf;
 
-                // create tool
-                var tools = createTools({
-                    markerWidth: config.markerWidth,
-                    markerHeight: config.markerHeight
-                });
-
                 // create marker container
                 var markerContainer = createMarker({
-                    tools: tools,
                     parentElement: parentElement,
                     markerClass: config.markerClass,
                     markerBorderX: markerBorderX,
