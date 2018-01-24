@@ -432,6 +432,11 @@
                     // drag event
                     $.fn.easypin.defaults.drag(absX, absY, markerContainer);
 
+                    if(e.buttons==1)
+                    {
+                        $.fn.easypin.defaults.drop(absX, absY, markerContainer);
+                    }
+
                     $(markerContainer).css({
                         position: 'absolute',
                         top: setPx(relY),
