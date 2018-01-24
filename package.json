@@ -15,7 +15,7 @@
   ],
   "dependencies": {
     "jquery": "^3.2.1",
-    "jquery.easing": "^1.4.1",
+    "jquery.easing": "^1.4.1"
   },
   "devDependencies": {
     "gulp": "^3.9.0",
