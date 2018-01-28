@@ -451,7 +451,7 @@
                 var lat = $(markerInstance).attr($.fn.easypin.config('xAttribute'));
                 var long = $(markerInstance).attr($.fn.easypin.config('yAttribute'));
 
-                $.fn.easypin.defaults.drop(lat, long, markerContainer);
+                $.fn.easypin.defaults.drop(lat, long, markerContainer, true);
 
                 dataUpdate(parentId, markerIndex, {coords: {lat: lat, long: long}});
 
