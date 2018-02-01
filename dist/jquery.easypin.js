@@ -23,25 +23,10 @@
         var loadedImgNum = 0;
         var total = $(this).length;
 
-        // hide all images
-        willPinningElements.each(function(i) {
-            $(this).css('opacity', 0);
-        });
-
         $(this).on('load', function() {
 
             loadedImgNum += 1;
             // show loaded image
-            $(this).animate(
-                {
-                    'opacity': '1'
-                },
-                {
-                    duration: 'fast',
-                    easing: 'easeInQuad'
-                }
-            );
-
             if (loadedImgNum == total) {
 
                 willPinningElements.each(function(i) {
@@ -113,11 +98,6 @@
         								cursor: 'copy'
         							})
         					)
-        					// cross to children object
-        					.children(setClass(hoverClass))
-        						.animate({
-        						    opacity: 0.2,
-        						}, 800);
         			}
 
         		// on mouseleave then remove opacity
@@ -527,23 +507,8 @@
             var total = $(this).length;
 
             // hide all images
-            depends.allCanvas.each(function(i) {
-                $(this).css('opacity', 0);
-            });
-
             $(depends.allCanvas).one('load', function() {
                 loadedImgNum += 1;
-
-                // show loaded image
-                $(this).animate(
-                    {
-                        'opacity': '1'
-                    },
-                    {
-                        duration: 'fast',
-                        easing: 'easeInQuad'
-                    }
-                );
 
                 if (loadedImgNum == total) {
 
@@ -631,23 +596,11 @@
 
                     var opacity = getCssPropertyValue('opacity', $(viewContainer).clone());
 
-                    $(viewContainer).css('opacity', 0);
                     $(pinContainer).append(viewContainer);
 
                     if(depends.popover.show == true) {
                         $('.easypin-popover', pinContainer).show();
                     }
-
-                    // marker
-                    $(viewContainer).animate(
-                        {
-                            'opacity': opacity
-                        },
-                        {
-                            duration: 'slow',
-                            easing: 'easeOutBack'
-                        }
-                    );
 
                     // popover
                     $('.easypin-marker:last', pinContainer).click(function(e) {
