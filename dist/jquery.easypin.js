@@ -67,11 +67,7 @@
             				.css({
             					width: setPx(imageWidth),
             					height: setPx(imageHeight),
-            					position: $.fn.easypin.config('parentPosition'),
-            					border: setPx(dashWidth)+' dashed #383838',
-                                'box-sizing': 'content-box',
-                                'webkit-box-sizing': 'content-box',
-                                '-moz-box-sizing': 'content-box'
+            					position: $.fn.easypin.config('parentPosition')
             				});
 
                         initPin(easypinId, $(this));
@@ -187,8 +183,8 @@
         			var targetImage = $('img'+setClass('easypin-target'), parentElement);
 
         			// set cursor position coordinate
-        			var imagePositionY = targetImage.offset().top - (dashWidth-posYBalance);
-        			var imagePositionX = targetImage.offset().left - (dashWidth-posXBalance);
+                    var imagePositionY = targetImage.offset().top;
+                    var imagePositionX = targetImage.offset().left;
         			var clickPosX = (e.pageX-imagePositionX);
         			var clickPosY = (e.pageY-imagePositionY);
 
@@ -223,7 +219,6 @@
                         markerClass: markerClass,
                         markerBorderX: markerBorderX,
                         markerBorderY: markerBorderY,
-                        markerWidth: markerWidth,
                         markerHeight: markerHeight,
                         markerContainerZindex: markerContainerZindex,
                         markerWidth: markerWidth,
@@ -231,7 +226,6 @@
                         absY: absY,
                         imageWidth: imageWidth,
                         imageHeight: imageHeight,
-                        parentElement: parentElement,
                         src: src
                     });
         		});
